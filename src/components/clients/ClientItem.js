@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ClientItem = ({ item }) => {
   return (
@@ -14,12 +15,7 @@ const ClientItem = ({ item }) => {
               <strong>Client ID: #</strong>
               {item.id}
             </li>
-            {/* <li>
-              <strong>Birthday:</strong> {item.birthday}
-            </li>
-            <li>
-              <strong>Status:</strong> {item.status}
-            </li> */}
+            <Link to="/company">Go to card</Link>
           </ul>
         </div>
       </div>

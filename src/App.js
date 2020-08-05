@@ -2,22 +2,30 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/ui/Header";
 import ClientGrid from "./components/clients/ClientGrid";
 import Search from "./components/ui/Search";
+import Company from "./components/Company";
 import axios from "axios";
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+// GET /clients
+// GET /clients/{clientId}
 
 const App = () => {
-  const [items, setItems] = useState([]);
+  const [companies, setCompanies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await axios(
-        `https://cors-anywhere.herokuapp.com/https://europe-west2-mpx-tools-internal.cloudfunctions.net/frontend-mock-api/clients?name=${query}`
+      const { data: fetchedCompanies } = await axios.get(
+        `https://cors-anywhere.herokuapp.com/https://europe-west2-mpx-tools-internal.cloudfunctions.net/frontend-mock-api/clients`
       );
 
-      // console.log(result.data);
-      setItems(result.data);
+      const filteredCompanies = fetchedCompanies.filter((fetchedCompany) => {
+        return fetchedCompany.name.toLowerCase().startsWith(query.toLowerCase());
+      });
+
+      setCompanies(filteredCompanies);
       setIsLoading(false);
     };
 
@@ -25,11 +33,20 @@ const App = () => {
   }, [query]);
 
   return (
-    <div className="container">
+    <Router>
       <Header />
-      <Search getQuery={(q) => setQuery(q)} />
-      <ClientGrid isLoading={isLoading} items={items} />
-    </div>
+      <Switch>
+        <Route path="/company">
+          <Company />
+        </Route>
+        <Route path="/">
+          <div className="container">
+            <Search query={query} setQuery={setQuery} />
+            <ClientGrid isLoading={isLoading} items={companies} />
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
