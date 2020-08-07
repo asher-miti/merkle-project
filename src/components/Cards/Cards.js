@@ -4,10 +4,11 @@ import styles from "./Cards.module.css";
 import CountUp from "react-countup";
 import cx from "classnames";
 
-const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
-  if (!confirmed) {
+const DataCards = ({ data: { impressions, clicks, conversions, date } }) => {
+  if (true) {
     return "Loading...";
   }
+
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
@@ -17,13 +18,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               Impressions
             </Typography>
             <Typography variant="h5">
-              <CountUp start={0} end={confirmed.value} duration={2} separator="," />
+              {/* <CountUp start={0} end={confirmed.value} duration={2} separator="," /> */}
             </Typography>
-            <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
+            {/* <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography> */}
             <Typography variant="body2">Number of impressions from campaign</Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.clicks)}>
+        {/* <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.clicks)}>
           {" "}
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
@@ -48,10 +49,10 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
             <Typography variant="body2">Number of conversions from campaign</Typography>
           </CardContent>
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );
 };
 
-export default Cards;
+export default DataCards;

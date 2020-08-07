@@ -1,47 +1,24 @@
 import axios from "axios";
 
-const url = "https://covid19.mathdro.id/api";
+const url = "https://europe-west2-mpx-tools-internal.cloudfunctions.net/frontend-mock-api/clients";
 
-export const fetchData = async () => {
+export const fetchData = async (id) => {
   try {
-    const {
-      data: { confirmed, recovered, deaths, lastUpdate },
-    } = await axios.get(url);
+    const { data } = await axios.get(`${url}/${id}`);
 
-    const modifiedData = {
-      confirmed,
-      recovered,
-      deaths,
-      lastUpdate,
-    };
-
-    return modifiedData;
-  } catch (error) {}
-};
-
-export const fetchDailyData = async () => {
-  try {
-    const { data } = await axios.get(`${url}/daily`);
-
-    const modifiedData = data.map((dailyData) => ({
-      confirmed: dailyData.confirmed.total,
-      deaths: dailyData.deaths.total,
-      date: dailyData.reportDate,
-    }));
-
-    return modifiedData;
+    return data;
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 
-export const fetchCountries = async () => {
+export const fetchClients = async () => {
   try {
     const {
-      data: { countries },
-    } = await axios.get(`${url}/countries`);
+      data: { clients },
+    } = await axios.get(url);
 
-    return countries.map((country) => country.name);
+    return clients.map((client) => client.name);
   } catch (error) {
     console.log(error);
   }

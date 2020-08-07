@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { fetchDailyData } from "../../api";
 import { Line } from "react-chartjs-2";
 
 import styles from "./Chart.module.css";
 
-const Chart = () => {
-  const [dailyData, setDailyData] = useState([]);
-
-  useEffect(() => {
-    const fetchAPI = async () => {
-      setDailyData(await fetchDailyData());
-    };
-
-    fetchAPI();
-  });
+const Chart = ({ dailyData }) => {
+  if (!dailyData) {
+    return null;
+  }
 
   const lineChart =
     dailyData.length !== 0 ? (
@@ -22,7 +15,7 @@ const Chart = () => {
           labels: dailyData.map(({ date }) => date),
           datasets: [
             {
-              data: dailyData.map(({ confirmed }) => confirmed),
+              data: dailyData.map(({ cost }) => cost),
               label: "Cost",
               borderColor: "#f78c2a",
               fill: true,

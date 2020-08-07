@@ -2,13 +2,10 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/ui/Header";
 import ClientGrid from "./components/clients/ClientGrid";
 import Search from "./components/ui/Search";
-import Company from "./components/Company";
+import Company from "./components/company/Company";
 import axios from "axios";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-// GET /clients
-// GET /clients/{clientId}
 
 const App = () => {
   const [companies, setCompanies] = useState([]);
@@ -18,13 +15,14 @@ const App = () => {
   useEffect(() => {
     const fetchItems = async () => {
       const { data: fetchedCompanies } = await axios.get(
-        `https://cors-anywhere.herokuapp.com/https://europe-west2-mpx-tools-internal.cloudfunctions.net/frontend-mock-api/clients`
+        `https://europe-west2-mpx-tools-internal.cloudfunctions.net/frontend-mock-api/clients`
       );
 
       const filteredCompanies = fetchedCompanies.filter((fetchedCompany) => {
         return fetchedCompany.name.toLowerCase().startsWith(query.toLowerCase());
       });
 
+      console.log("test", filteredCompanies);
       setCompanies(filteredCompanies);
       setIsLoading(false);
     };
@@ -36,9 +34,7 @@ const App = () => {
     <Router>
       <Header />
       <Switch>
-        <Route path="/company">
-          <Company />
-        </Route>
+        <Route path="/company/:id" component={Company} />
         <Route path="/">
           <div className="container">
             <Search query={query} setQuery={setQuery} />

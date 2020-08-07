@@ -3,25 +3,25 @@ import { NativeSelect, FormControl } from "@material-ui/core";
 
 import styles from "./ClientPicker.module.css";
 
-import { fetchCountries } from "../../api";
+import { fetchClients } from "../../api";
 
 const ClientPicker = ({ handleClientChange }) => {
-  const [fetchedCountries, setFetchedCountries] = useState([]);
+  const [fetchedClients, setFetchedClients] = useState([]);
   useEffect(() => {
     const fetchAPI = async () => {
-      setFetchedCountries(await fetchCountries());
+      setFetchedClients(await fetchedClients());
     };
 
     fetchAPI();
-  }, [setFetchedCountries]);
+  }, [setFetchedClients]);
 
   return (
     <FormControl className={styles.formControl}>
       <NativeSelect defaultValue="" onChange={(e) => handleClientChange(e.target.value)}>
         <option value="client">Clients</option>
-        {fetchedCountries.map((country, i) => (
-          <option key={i} value={country}>
-            {country}
+        {fetchedClients.map((client, i) => (
+          <option key={i} value={client}>
+            {client}
           </option>
         ))}
       </NativeSelect>

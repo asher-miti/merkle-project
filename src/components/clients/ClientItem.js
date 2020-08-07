@@ -12,10 +12,9 @@ const ClientItem = ({ item }) => {
           <h1>{item.name}</h1>
           <ul>
             <li>
-              <strong>Client ID: #</strong>
-              {item.id}
+              <strong>Client ID: #{item.id}</strong>
             </li>
-            <Link to="/company">Go to card</Link>
+            <Link to={`/company/${item.id}`}>Go to card</Link>
           </ul>
         </div>
       </div>
