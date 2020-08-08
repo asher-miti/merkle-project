@@ -5,7 +5,7 @@ const url = "https://europe-west2-mpx-tools-internal.cloudfunctions.net/frontend
 export const fetchData = async (id) => {
   try {
     const { data } = await axios.get(`${url}/${id}`);
-
+    console.log(data);
     return data;
   } catch (error) {
     console.log(error.message);

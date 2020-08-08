@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Company.module.css";
-import { Cards, Chart, ClientPicker } from "..";
+import { Cards, Chart, ClientPicker, Table } from "../index";
 import { fetchData } from "../../api";
 
 const Company = ({
@@ -22,9 +22,11 @@ const Company = ({
 
   return (
     <div className={styles.container}>
-      {/* <Cards data={companyData} /> */}
+      <Cards data={companyData} />
       {/* <ClientPicker handleClientChange={this.handleClientChange} /> */}
       <Chart dailyData={companyData.data} />
+      {console.log(companyData.data)}
+      <Table data={companyData.data} />
     </div>
   );
 };
