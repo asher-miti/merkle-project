@@ -32,11 +32,11 @@ const App = () => {
 
   return (
     <Router>
-      <Header />
       <Switch>
         <Route path="/company/:id" component={Company} />
         <Route path="/">
           <div className="container">
+            <Header />
             <Search query={query} setQuery={setQuery} />
             <ClientGrid isLoading={isLoading} items={companies} />
           </div>

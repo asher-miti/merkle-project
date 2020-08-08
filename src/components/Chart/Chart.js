@@ -33,23 +33,23 @@ const Chart = ({ dailyData }) => {
           },
         }}
         data={{
-          labels: dailyData.map(({ date }) => new Date(date).toDateString()),
+          labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString("en-GB")),
           datasets: [
             {
               data: dailyData.map(({ impressions }) => impressions),
-              label: "impressions",
+              label: "Impressions",
               borderColor: "#f78c2a",
               fill: false,
             },
             {
               data: dailyData.map(({ clicks }) => clicks),
-              label: "clicks",
+              label: "Clicks",
               borderColor: "green",
               fill: false,
             },
             {
               data: dailyData.map(({ conversions }) => conversions),
-              label: "conversions",
+              label: "Conversions",
               borderColor: "blue",
               fill: false,
             },

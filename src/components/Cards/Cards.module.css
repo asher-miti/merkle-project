@@ -7,11 +7,15 @@
 }
 
 .clicks {
-  border-bottom: 10px solid rgba(0, 0, 255, 0.5);
+  border-bottom: 10px solid #f78c2a;
 }
 .impressions {
-  border-bottom: 10px solid rgba(248, 83, 94, 0.5);
+  border-bottom: 10px solid #f78c2a;
 }
 .conversions {
-  border-bottom: 10px solid rgba(0, 255, 0, 0.5);
+  border-bottom: 10px solid #f78c2a;
+}
+
+.cost {
+  border-bottom: 10px solid #f78c2a;
 }

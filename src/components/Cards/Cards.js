@@ -23,7 +23,7 @@ const Cards = ({ data: { id, name, logo, data: dailyData } }) => {
               <CountUp start={0} end={impressions} duration={2} separator="," />
             </Typography>
             <Typography color="textSecondary">{new Date(date).toDateString()}</Typography>
-            <Typography variant="body2">Number of impressions from campaign</Typography>
+            <Typography variant="body2">Total number of impressions made</Typography>
           </CardContent>
         </Grid>
         <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.clicks)}>
@@ -35,7 +35,7 @@ const Cards = ({ data: { id, name, logo, data: dailyData } }) => {
               <CountUp start={0} end={clicks} duration={2} separator="," />
             </Typography>
             <Typography color="textSecondary">{new Date(date).toDateString()}</Typography>
-            <Typography variant="body2">Number of clicks from campaign</Typography>
+            <Typography variant="body2">Total number of clicks made</Typography>
           </CardContent>
         </Grid>
         <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.conversions)}>
@@ -47,19 +47,19 @@ const Cards = ({ data: { id, name, logo, data: dailyData } }) => {
               <CountUp start={0} end={conversions} duration={2} separator="," />
             </Typography>
             <Typography color="textSecondary">{new Date(date).toDateString()}</Typography>
-            <Typography variant="body2">Number of conversions from campaign</Typography>
+            <Typography variant="body2">Total number of conversions made</Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.conversions)}>
+        <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.cost)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Cost
+              Cost (£)
             </Typography>
             <Typography variant="h5">
               <CountUp start={0} end={cost} duration={2} separator="," />
             </Typography>
             <Typography color="textSecondary">{new Date(date).toDateString()}</Typography>
-            <Typography variant="body2">Cost</Typography>
+            <Typography variant="body2">Total Cost of campaign</Typography>
           </CardContent>
         </Grid>
       </Grid>
