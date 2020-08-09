@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import styles from "./Chart.module.css";
 import { Paper } from "@material-ui/core";
+
 // import Radio from "@material-ui/core/Radio";
 // import RadioGroup from "@material-ui/core/RadioGroup";
 // import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -27,7 +28,7 @@ const Chart = ({ dailyData }) => {
             yAxes: [
               {
                 id: "first-y-axis",
-                type: "logarithmic",
+                type: "linear",
               },
             ],
           },
@@ -36,27 +37,9 @@ const Chart = ({ dailyData }) => {
           labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString("en-GB")),
           datasets: [
             {
-              data: dailyData.map(({ impressions }) => impressions),
-              label: "Impressions",
-              borderColor: "#f78c2a",
-              fill: false,
-            },
-            {
-              data: dailyData.map(({ clicks }) => clicks),
-              label: "Clicks",
-              borderColor: "green",
-              fill: false,
-            },
-            {
-              data: dailyData.map(({ conversions }) => conversions),
-              label: "Conversions",
-              borderColor: "blue",
-              fill: false,
-            },
-            {
               data: dailyData.map(({ cost }) => cost),
               label: "Cost",
-              borderColor: "red",
+              borderColor: "#f78c2a",
               fill: false,
             },
           ],
@@ -65,9 +48,10 @@ const Chart = ({ dailyData }) => {
     ) : null;
 
   return (
-    <Paper className={styles.container}>
-      {/* 
-      <header className="chart-header">
+    <>
+      <Paper className={styles.container}>
+        {lineChart}
+        {/* <header className="chart-header">
         <h2>Client Budget Spending</h2>
         <FormControl component="fieldset">
           <RadioGroup row aria-label="date-range" name="dateRange" value={this.state.dateRange}>
@@ -95,12 +79,48 @@ const Chart = ({ dailyData }) => {
               label="Last 7 days"
               onClick={() => this.setDateRange("7")}
             />
+            <FormControlLabel
+              value="1"
+              control={<Radio />}
+              label="Today"
+              onClick={() => this.setDateRange("1")}
+            />
           </RadioGroup>
         </FormControl>
       </header> */}
-      {lineChart}
-    </Paper>
+      </Paper>
+    </>
   );
 };
 
 export default Chart;
+
+// options={{
+//   scales: {
+//     yAxes: [
+//       {
+//         id: "first-y-axis",
+//         type: "logarithmic",
+//       },
+//     ],
+//   },
+// }}
+
+/* {
+  data: dailyData.map(({ impressions }) => impressions),
+  label: "Impressions",
+  borderColor: "orange",
+  fill: false,
+},
+{
+  data: dailyData.map(({ clicks }) => clicks),
+  label: "Clicks",
+  borderColor: "blue",
+  fill: false,
+},
+{
+  data: dailyData.map(({ conversions }) => conversions),
+  label: "Conversions",
+  borderColor: "green",
+  fill: false,
+}, */

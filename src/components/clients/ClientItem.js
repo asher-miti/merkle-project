@@ -14,7 +14,9 @@ const ClientItem = ({ item }) => {
             <li>
               <strong>Client ID: #{item.id}</strong>
             </li>
-            <Link to={`/company/${item.id}`}>Go to card</Link>
+            <button className="card-link">
+              <Link to={`/company/${item.id}`}>See Data</Link>
+            </button>
           </ul>
         </div>
       </div>
