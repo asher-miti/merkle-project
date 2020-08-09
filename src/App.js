@@ -18,11 +18,11 @@ const App = () => {
         `https://europe-west2-mpx-tools-internal.cloudfunctions.net/frontend-mock-api/clients`
       );
 
+      // Home page search query
       const filteredCompanies = fetchedCompanies.filter((fetchedCompany) => {
         return fetchedCompany.name.toLowerCase().startsWith(query.toLowerCase());
       });
 
-      console.log("test", filteredCompanies);
       setCompanies(filteredCompanies);
       setIsLoading(false);
     };

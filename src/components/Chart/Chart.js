@@ -16,6 +16,8 @@ const Chart = ({ dailyData }) => {
   //   chartData: "",
   // };
 
+  const options = { day: "numeric", month: "short" };
+
   if (!dailyData) {
     return null;
   }
@@ -34,13 +36,21 @@ const Chart = ({ dailyData }) => {
           },
         }}
         data={{
-          labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString("en-GB")),
+          labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString("en-GB", options)),
           datasets: [
             {
               data: dailyData.map(({ cost }) => cost),
-              label: "Cost",
-              borderColor: "#f78c2a",
-              fill: false,
+              label: "Cost (£)",
+              fontFamily: "'Arial', sans-serif",
+              fontSize: "20px",
+              borderColor: "rgba(247,140,42,1)",
+              backgroundColor: "rgba(246,161,84,.4)",
+              borderCapStyle: "butt",
+              borderDash: [],
+              fill: true,
+              borderJoinStyle: "miter",
+              pointBorderWidth: 1,
+              pointHoverRadius: 5,
             },
           ],
         }}

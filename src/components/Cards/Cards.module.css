@@ -1,5 +1,6 @@
 .container {
   margin: 50px 0;
+  width: 80%;
 }
 
 .card {
@@ -8,14 +9,22 @@
 
 .clicks {
   border-bottom: 10px solid #2bbec0;
+  align-items: center;
+  text-align: center;
 }
 .impressions {
   border-bottom: 10px solid #2500f5;
+  align-items: center;
+  text-align: center;
 }
 .conversions {
   border-bottom: 10px solid #4af008;
+  align-items: center;
+  text-align: center;
 }
 
 .cost {
   border-bottom: 10px solid #f78c2a;
+  align-items: center;
+  text-align: center;
 }

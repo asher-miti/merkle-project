@@ -23,7 +23,7 @@ const Cards = ({ data: { id, name, logo, data: dailyData } }) => {
               <CountUp start={0} end={impressions} duration={2} separator="," />
             </Typography>
             <Typography color="textSecondary">{new Date(date).toDateString()}</Typography>
-            <Typography variant="body2">Number of impressions</Typography>
+            <Typography variant="body2">Total number of impressions</Typography>
           </CardContent>
         </Grid>
         <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.clicks)}>
@@ -35,7 +35,7 @@ const Cards = ({ data: { id, name, logo, data: dailyData } }) => {
               <CountUp start={0} end={clicks} duration={2} separator="," />
             </Typography>
             <Typography color="textSecondary">{new Date(date).toDateString()}</Typography>
-            <Typography variant="body2">Number of clicks</Typography>
+            <Typography variant="body2">Total number of clicks</Typography>
           </CardContent>
         </Grid>
         <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.conversions)}>
@@ -47,7 +47,7 @@ const Cards = ({ data: { id, name, logo, data: dailyData } }) => {
               <CountUp start={0} end={conversions} duration={2} separator="," />
             </Typography>
             <Typography color="textSecondary">{new Date(date).toDateString()}</Typography>
-            <Typography variant="body2">Number of conversions</Typography>
+            <Typography variant="body2">Total number of conversions</Typography>
           </CardContent>
         </Grid>
         <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.cost)}>
