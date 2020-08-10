@@ -3,10 +3,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 
-/* .chart {
-  background-color: rgb(250, 250, 250);
-  height: 50vh;
-  width: 60vw;
-} */
+.dataContainer {
+  width: 75%;
+}

@@ -1,7 +1,25 @@
 .container {
   display: flex;
-  width: 75%;
+  width: 100%;
   background-color: whitesmoke;
   padding: 1rem;
   border-radius: 0.4rem;
+}
+
+.header {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.timeframe {
+  margin-bottom: 25px;
+  padding: 1%;
+  width: 60%;
+  background-color: whitesmoke;
+  transform: translateX(33%);
+}
+
+.boxes {
+  margin-left: 45px;
+  margin-top: 10px;
 }

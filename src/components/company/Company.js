@@ -2,8 +2,14 @@ import React, { useState, useEffect } from "react";
 import styles from "./Company.module.css";
 import { Cards, Chart, ClientHeader, TableData } from "../index";
 import { fetchData } from "../../api";
+import Spinner from "../ui/Spinner";
+import ClientPicker from "../clientpicker/ClientPicker";
 
 const Company = ({
+  state = {
+    client: "",
+  },
+  isLoading,
   match: {
     params: { id },
   },
@@ -20,14 +26,21 @@ const Company = ({
     fetchCompanyData();
   }, [id]);
 
-  return (
+  // handleClientChange = async (client) => {
+  //   console.log(client);
+  // };
+
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <div className={styles.container}>
       <ClientHeader companyData={companyData} />
-      <Cards data={companyData} />
-      {/* <ClientPicker handleClientChange={this.handleClientChange} /> */}
-      <Chart dailyData={companyData.data} />
-      {/* <Table data={companyData.data} /> */}
-      <TableData data={companyData.data} />
+      <div className={styles.dataContainer}>
+        {/* <ClientPicker handleClientChange={this.handleClientChange} /> */}
+        <Cards data={companyData} />
+        <Chart dailyData={companyData.data} />
+        <TableData data={companyData.data} />
+      </div>
     </div>
   );
 };

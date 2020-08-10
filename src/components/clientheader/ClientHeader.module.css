@@ -1,9 +1,11 @@
 .headerContainer {
   display: flex;
-  width: 50%;
+  width: 45%;
   justify-content: space-around;
   align-items: center;
   margin-top: 35px;
+  font-size: 20px;
+  margin-left: 40px;
 }
 
 .arrow {

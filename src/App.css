@@ -11,7 +11,8 @@ body {
   height: 100vh;
   background-attachment: fixed;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Arial", sans-serif;
+  overflow-x: hidden;
 }
 
 a {
