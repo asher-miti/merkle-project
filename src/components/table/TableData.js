@@ -11,6 +11,7 @@ import {
   TableRow,
 } from "@material-ui/core";
 
+// Fixed header settings
 const columns = [
   { id: "impressions", label: "Impressions", minWidth: 170 },
   { id: "clicks", label: "Clicks", minWidth: 100 },
@@ -35,8 +36,7 @@ const columns = [
   },
 ];
 
-// new Date(date).toLocaleDateString("en-GB", { day: "numeric", month: "short" })
-
+// Tabledata styles
 const useStyles = makeStyles({
   table: {
     minWidth: 650,

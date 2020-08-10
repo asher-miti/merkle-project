@@ -142,14 +142,41 @@ input[type="text"] {
   padding-bottom: 10px;
 }
 
+/* Responsiveness */
 @media (max-width: 800px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card img {
+    width: 80%;
+    margin-left: 70px;
+  }
+
+  .card-back {
+    width: 70%;
+  }
+
+  .card-inner {
+    width: 70%;
   }
 }
 
 @media (max-width: 500px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .card img {
+    width: 60%;
+    margin-left: 120px;
+  }
+
+  .card-back {
+    width: 60%;
+  }
+
+  .card-inner {
+    width: 70%;
   }
 }

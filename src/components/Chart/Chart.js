@@ -40,6 +40,11 @@ const Chart = ({ dailyData }) => {
     checked: {},
   })((props) => <Radio color="default" {...props} />);
 
+  // Radio button change handler
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
   // Line chart data setting
   const lineChart =
     rangedDailyData.length !== 0 ? (
@@ -53,10 +58,6 @@ const Chart = ({ dailyData }) => {
         }}
       />
     ) : null;
-
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
 
   return (
     <>

@@ -9,3 +9,12 @@
 .dataContainer {
   width: 75%;
 }
+
+/* Responsiveness */
+@media (max-width: 800px) {
+  .dataContainer {
+  }
+}
+
+@media (max-width: 500px) {
+}
