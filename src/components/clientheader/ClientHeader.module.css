@@ -1,0 +1,19 @@
+.headerContainer {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.arrow {
+  height: 50px;
+  cursor: pointer;
+}
+
+.clientName {
+}
+
+.clientLogo {
+  width: 100px;
+}

@@ -1,13 +1,12 @@
 import React from "react";
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
-import styles from "./Cards.module.css";
 import CountUp from "react-countup";
 import cx from "classnames";
 
+import styles from "./Cards.module.css";
+
 const Cards = ({ data: { id, name, logo, data: dailyData } }) => {
-  if (!id) {
-    return "Loading...";
-  }
+  if (!id) return "Loading...";
 
   const { clicks, conversions, cost, impressions, date } = dailyData[dailyData.length - 1];
 

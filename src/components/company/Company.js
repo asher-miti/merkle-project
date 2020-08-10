@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Company.module.css";
-import { Cards, Chart, ClientPicker, ClientHeader, TableData } from "../index";
+import { Cards, Chart, ClientHeader, TableData } from "../index";
 import { fetchData } from "../../api";
-import { Link } from "react-router-dom";
-import arrow from "../../images/arrow.svg";
 
 const Company = ({
   match: {
@@ -24,10 +22,7 @@ const Company = ({
 
   return (
     <div className={styles.container}>
-      {/* <ClientHeader /> */}
-      <Link to={`/clients/ClientItem`}>
-        <img className={styles.arrow} src={arrow} alt="Go Back" />
-      </Link>
+      <ClientHeader companyData={companyData} />
       <Cards data={companyData} />
       {/* <ClientPicker handleClientChange={this.handleClientChange} /> */}
       <Chart dailyData={companyData.data} />

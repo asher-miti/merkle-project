@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Header from "./components/ui/Header";
-import ClientGrid from "./components/clients/ClientGrid";
-import Search from "./components/ui/Search";
-import Company from "./components/company/Company";
 import axios from "axios";
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Header, ClientGrid, Search, Company } from "../src/components/index";
+
+import "./App.css";
 
 const App = () => {
   const [companies, setCompanies] = useState([]);

@@ -1,13 +1,15 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TablePagination from "@material-ui/core/TablePagination";
-import TableRow from "@material-ui/core/TableRow";
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+} from "@material-ui/core";
 
 const columns = [
   { id: "impressions", label: "Impressions", minWidth: 170 },
@@ -36,6 +38,11 @@ const columns = [
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
+  },
+  root: {
+    marginTop: "3rem",
+    marginBottom: "3rem",
+    borderRadius: 5,
   },
 });
 
@@ -81,9 +88,10 @@ const TableData = ({ data }) => {
           <TableBody>
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.date}>
                   {columns.map((column) => {
                     const value = row[column.id];
+
                     return (
                       <TableCell key={column.id} align={column.align}>
                         {column.format && typeof value === "number" ? column.format(value) : value}
