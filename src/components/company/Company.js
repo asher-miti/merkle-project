@@ -6,12 +6,12 @@ import Spinner from "../ui/Spinner";
 import ClientPicker from "../clientpicker/ClientPicker";
 
 const Company = ({
-  isLoading,
   match: {
     params: { id },
   },
 }) => {
   const [companyData, setCompanyData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchCompanyData(id);
@@ -20,7 +20,8 @@ const Company = ({
   const fetchCompanyData = async (id) => {
     const fetchedData = await fetchData(id);
 
-    setCompanyData(fetchedData); // dailyData, id, companyName, logo
+    setCompanyData(fetchedData); // dailyData, id, companyName, logoj
+    setIsLoading(false);
   };
 
   const handleClientChange = (data) => {

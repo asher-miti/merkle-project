@@ -34,13 +34,17 @@
 }
 
 @media (max-width: 500px) {
+  .headerContainer {
+    margin-left: 10px;
+    margin-bottom: 15px;
+  }
   .clientLogo {
-    width: 75px;
-    margin-left: 30px;
+    width: 65px;
+    margin-left: 15px;
   }
 
   .arrow {
     height: 35px;
-    margin-right: 30px;
+    margin-right: 25px;
   }
 }

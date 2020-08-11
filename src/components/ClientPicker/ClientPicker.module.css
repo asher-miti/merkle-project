@@ -1,4 +1,13 @@
 .formControl {
   width: 120px;
   background-color: white;
+  border-radius: 5px;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.option {
+  background-color: #fff;
 }

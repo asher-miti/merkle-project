@@ -25,8 +25,9 @@ a {
   padding: 0 20px;
 }
 
+/* Merkle Logo */
 header {
-  height: 200px;
+  height: 180px;
 }
 
 header img {
@@ -40,7 +41,7 @@ header img {
 }
 
 .search {
-  height: 110px;
+  height: 95px;
 }
 
 input[type="text"] {
@@ -53,6 +54,7 @@ input[type="text"] {
   margin: auto;
 }
 
+/* Homepage card items */
 .cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -169,7 +171,7 @@ input[type="text"] {
 
   .card img {
     width: 60%;
-    margin-left: 120px;
+    margin-left: 110px;
   }
 
   .card-back {
@@ -178,5 +180,12 @@ input[type="text"] {
 
   .card-inner {
     width: 70%;
+  }
+
+  .search {
+    height: 95px;
+  }
+  header img {
+    width: 250px;
   }
 }
