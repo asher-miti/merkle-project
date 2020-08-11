@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NativeSelect, FormControl } from "@material-ui/core";
 
-import { fetchClients } from "../../api";
+import { fetchClients } from "../../../api";
 import styles from "./ClientPicker.module.css";
 
 const ClientPicker = ({ handleClientChange, data }) => {

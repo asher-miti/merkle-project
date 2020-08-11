@@ -1,7 +1,7 @@
 import React from "react";
 
 import ClientItem from "./ClientItem";
-import Spinner from "../ui/Spinner";
+import Spinner from "../UI/Spinner";
 
 const ClientGrid = ({ items, isLoading }) => {
   return isLoading ? (

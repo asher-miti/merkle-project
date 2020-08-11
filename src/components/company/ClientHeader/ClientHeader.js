@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import arrow from "../../images/arrow.svg";
+import arrow from "../../../images/arrow.svg";
 import styles from "./ClientHeader.module.css";
 
 const ClientHeader = ({ companyData }) => {

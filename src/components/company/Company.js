@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./Company.module.css";
 import { Cards, Chart, ClientHeader, TableData } from "../index";
 import { fetchData } from "../../api";
-import Spinner from "../ui/Spinner";
-import ClientPicker from "../clientpicker/ClientPicker";
+import Spinner from "../UI/Spinner";
+import ClientPicker from "./ClientPicker/ClientPicker";
 
 const Company = ({
   match: {
