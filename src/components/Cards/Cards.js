@@ -58,7 +58,7 @@ const Cards = ({ data: { id, name, logo, data: dailyData } }) => {
               <CountUp start={0} end={cost} duration={2} separator="," />
             </Typography>
             <Typography color="textSecondary">{new Date(date).toDateString()}</Typography>
-            <Typography variant="body2">Total cost</Typography>
+            <Typography variant="body2">Total cost of campaign</Typography>
           </CardContent>
         </Grid>
       </Grid>

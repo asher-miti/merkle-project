@@ -17,7 +17,7 @@ const Chart = ({ dailyData }) => {
   const options = {
     data: rangedDailyData.map(({ cost }) => cost),
     label: "Cost (£)",
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
     fontSize: "20px",
     borderColor: "rgba(247,140,42,1)",
     backgroundColor: "rgba(246,161,84,.4)",
@@ -62,7 +62,7 @@ const Chart = ({ dailyData }) => {
   return (
     <>
       <Paper className={styles.timeframe} elevation={3}>
-        <h2 className={styles.header}>Client Budget Spending</h2>
+        <h2 className={styles.header}>Budget Spending & Daily Data</h2>
         <FormControl component="fieldset">
           <RadioGroup
             defaultValue="30"
@@ -123,7 +123,7 @@ const Chart = ({ dailyData }) => {
           </RadioGroup>
         </FormControl>
       </Paper>
-      <div className={styles.container}>{lineChart}</div>
+      <Paper className={styles.container}>{lineChart}</Paper>
     </>
   );
 };

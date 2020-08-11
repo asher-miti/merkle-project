@@ -6,6 +6,7 @@ const url = "https://europe-west2-mpx-tools-internal.cloudfunctions.net/frontend
 export const fetchData = async (id) => {
   try {
     const { data } = await axios.get(`${url}/${id}`);
+
     return data;
   } catch (error) {
     console.log(error.message);
@@ -14,11 +15,9 @@ export const fetchData = async (id) => {
 
 export const fetchClients = async () => {
   try {
-    const {
-      data: { clients },
-    } = await axios.get(url);
+    const { data } = await axios.get(url);
 
-    return clients.map((client) => client.name);
+    return data;
   } catch (error) {
     console.log(error);
   }

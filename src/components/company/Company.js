@@ -6,9 +6,6 @@ import Spinner from "../ui/Spinner";
 import ClientPicker from "../clientpicker/ClientPicker";
 
 const Company = ({
-  state = {
-    client: "",
-  },
   isLoading,
   match: {
     params: { id },
@@ -17,18 +14,23 @@ const Company = ({
   const [companyData, setCompanyData] = useState({});
 
   useEffect(() => {
-    const fetchCompanyData = async () => {
-      const fetchedData = await fetchData(id);
-
-      setCompanyData(fetchedData); // dailyData, id, companyName, logo
-    };
-
-    fetchCompanyData();
+    fetchCompanyData(id);
   }, [id]);
 
-  // handleClientChange = async (client) => {
-  //   console.log(client);
-  // };
+  const fetchCompanyData = async (id) => {
+    const fetchedData = await fetchData(id);
+
+    setCompanyData(fetchedData); // dailyData, id, companyName, logo
+  };
+
+  const handleClientChange = (data) => {
+    console.log(data);
+    if (data) {
+      const parsedData = JSON.parse(data);
+
+      fetchCompanyData(parsedData.id);
+    }
+  };
 
   return isLoading ? (
     <Spinner />
@@ -36,7 +38,7 @@ const Company = ({
     <div className={styles.container}>
       <ClientHeader companyData={companyData} />
       <div className={styles.dataContainer}>
-        {/* <ClientPicker handleClientChange={this.handleClientChange} /> */}
+        <ClientPicker handleClientChange={handleClientChange} data={companyData} />
         <Cards data={companyData} />
         <Chart dailyData={companyData.data} />
         <TableData data={companyData.data} />

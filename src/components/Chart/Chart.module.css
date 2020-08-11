@@ -1,7 +1,7 @@
 .container {
   display: flex;
   width: 100%;
-  background-color: whitesmoke;
+
   padding: 1rem;
   border-radius: 0.4rem;
 }
@@ -16,7 +16,6 @@
   margin-bottom: 25px;
   padding: 1%;
   width: 60%;
-  background-color: whitesmoke;
   transform: translateX(33%);
 }
 

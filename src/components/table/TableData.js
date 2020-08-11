@@ -11,32 +11,39 @@ import {
   TableRow,
 } from "@material-ui/core";
 
-// Fixed header settings
+// Fixed table header settings
 const columns = [
-  { id: "impressions", label: "Impressions", minWidth: 170 },
-  { id: "clicks", label: "Clicks", minWidth: 100 },
+  {
+    id: "impressions",
+    label: "Impressions",
+    minWidth: 170,
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  { id: "clicks", label: "Clicks", minWidth: 100, format: (value) => value.toLocaleString("en-US") },
   {
     id: "conversions",
     label: "Conversions",
     minWidth: 170,
     align: "right",
+    format: (value) => value.toLocaleString("en-US"),
   },
   {
     id: "cost",
     label: "Cost(£)",
     minWidth: 170,
     align: "right",
+    format: (value) => value.toLocaleString("en-US"),
   },
   {
     id: "date",
     label: "Date",
     minWidth: 170,
     align: "right",
-    format: (value) => value.toLocaleString("en-GB"),
+    format: (date) => new Date(date).toLocaleDateString("en-GB"),
   },
 ];
 
-// Tabledata styles
+// Table styles
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -67,10 +74,12 @@ const TableData = ({ data }) => {
     return null;
   }
 
+  // Fetched API data with destructuring
   function createData(clicks, conversions, cost, impressions, date) {
     return { impressions, clicks, conversions, cost, date };
   }
 
+  // Mapping through API data for Table use
   const rows = data.map(({ clicks, conversions, cost, impressions, date }) => {
     return createData(clicks, conversions, cost, impressions, date);
   });
@@ -97,7 +106,9 @@ const TableData = ({ data }) => {
 
                     return (
                       <TableCell key={column.id} align={column.align}>
-                        {column.format && typeof value === "number" ? column.format(value) : value}
+                        {column.format && typeof value === "number"
+                          ? column.format(value)
+                          : new Date(value).toLocaleDateString("en-GB")}
                       </TableCell>
                     );
                   })}
