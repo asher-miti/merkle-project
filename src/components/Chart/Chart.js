@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
-import { Paper, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from "@material-ui/core";
+import { Paper, Radio, RadioGroup, FormControlLabel, FormControl } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 
 import styles from "./Chart.module.css";
