@@ -9,6 +9,7 @@ const App = () => {
   const [companies, setCompanies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState("");
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const fetchItems = async () => {

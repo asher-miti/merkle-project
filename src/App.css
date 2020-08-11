@@ -151,16 +151,7 @@ input[type="text"] {
   }
 
   .card img {
-    width: 80%;
-    margin-left: 70px;
-  }
-
-  .card-back {
-    width: 70%;
-  }
-
-  .card-inner {
-    width: 70%;
+    height: 200px;
   }
 }
 
@@ -170,22 +161,6 @@ input[type="text"] {
   }
 
   .card img {
-    width: 60%;
-    margin-left: 110px;
-  }
-
-  .card-back {
-    width: 60%;
-  }
-
-  .card-inner {
-    width: 70%;
-  }
-
-  .search {
-    height: 95px;
-  }
-  header img {
-    width: 250px;
+    height: 200px;
   }
 }

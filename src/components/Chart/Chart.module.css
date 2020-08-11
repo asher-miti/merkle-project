@@ -24,13 +24,17 @@
 
 /* Responsiveness */
 @media (max-width: 800px) {
+  .boxes {
+    margin-left: 60px;
+  }
+  .timeframe {
+    width: 68%;
+    transform: translateX(25%);
+  }
 }
 
 @media (max-width: 500px) {
   .boxes {
     margin-left: 30px;
   }
-  /* .timeframe {
-    width: 70%;
-  } */
 }

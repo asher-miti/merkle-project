@@ -79,10 +79,14 @@ const TableData = ({ data }) => {
     return { impressions, clicks, conversions, cost, date };
   }
 
-  // Mapping through API data for Table use
+  // Mapping through data for Table use
   const rows = data.map(({ clicks, conversions, cost, impressions, date }) => {
     return createData(clicks, conversions, cost, impressions, date);
   });
+
+  // const subTotal = (data) => {
+  //   return data.map(({ item }) => item).reduce((sum, i) => sum + i, 0);
+  // }
 
   return (
     <Paper className={classes.root}>

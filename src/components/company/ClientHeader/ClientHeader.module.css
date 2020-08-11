@@ -19,6 +19,10 @@
 
 /* Responsiveness */
 @media (max-width: 800px) {
+  .headerContainer {
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
   .clientLogo {
     width: 75px;
     margin-left: 40px;
