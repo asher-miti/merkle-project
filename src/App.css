@@ -124,7 +124,7 @@ input[type="text"] {
   border-radius: 5px;
   margin-top: 9px;
   font-family: inherit;
-  color: rgb(37 80 126);
+  color: rgb(37 80 126) !important;
   background-color: transparent;
   transition: all 0.2s;
 }
