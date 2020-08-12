@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.dataContainer {
+  width: 75%;
+}
+
+/* Responsiveness */
+@media (max-width: 800px) {
+  .dataContainer {
+  }
+}
+
+@media (max-width: 500px) {
+}
